@@ -23,6 +23,10 @@ namespace Part2
                 squereObj.AngleVector(spinDegree - 180, 1);
                 spinDegree = spinDegree - 180;
             }
+            if(spinDegree != 0)
+            {
+            squereObj.AngleVector(spinDegree, 1); // Spin the remeining amount
+            }
 
             squereObj.Fade(totalFadeTime / 2, 100, 0); //Full opacity to minimum in half the fade time (fade out)
             squereObj.Fade(totalFadeTime / 2, 0, 100); //Minimum opacity to full in half the fade time (fade in)
