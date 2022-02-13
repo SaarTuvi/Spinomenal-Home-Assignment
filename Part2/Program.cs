@@ -16,16 +16,13 @@ namespace Part2
 
             Squere squereObj = new Squere(squereWidth, squereHight, squereColor);
             //Constructing the squere with dimentions and color required
-            while (spinDegree >= 180)
+
+            int vectorMultiplier = spinDegree / 180;
+            int remainer = spinDegree % 180;
+            squereObj.AngleVector(180, vectorMultiplier);
+            if(remainer != 0)
             {
-                //Making sure the degree given is 180.
-                ////if it's more, it will spin 180 one time, and reduct 180 from the full spin requried
-                squereObj.AngleVector(spinDegree - 180, 1);
-                spinDegree = spinDegree - 180;
-            }
-            if(spinDegree != 0)
-            {
-            squereObj.AngleVector(spinDegree, 1); // Spin the remeining amount
+                squereObj.AngleVector(remainer, 1);
             }
 
             squereObj.Fade(totalFadeTime / 2, 100, 0); //Full opacity to minimum in half the fade time (fade out)
